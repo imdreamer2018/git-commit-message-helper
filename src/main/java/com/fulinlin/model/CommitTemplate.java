@@ -13,7 +13,7 @@ import lombok.Setter;
 public class CommitTemplate {
 
     private String authorName;
-    private String cardNumber;
+    private String cardNumber = "N/A";
     private String type;
     private String scope;
     private String subject;
