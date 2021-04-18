@@ -12,7 +12,7 @@ public class CommitPanel {
     private JPanel mainPanel;
     private JTextField authorName;
     private JTextField cardNumber;
-    private JComboBox changeType;
+    private JComboBox<TypeAlias> changeType;
     private JTextField shortDescription;
     private JTextArea longDescription;
     private JLabel authorNameLabel;
