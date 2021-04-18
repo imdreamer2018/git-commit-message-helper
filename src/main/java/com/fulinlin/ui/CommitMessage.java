@@ -10,7 +10,6 @@ import org.apache.commons.lang.StringUtils;
  * @author fulin
  */
 public class CommitMessage {
-    private static final int MAX_LINE_LENGTH = 72; // https://stackoverflow.com/a/2120040/5138796
     private final String content;
 
     public CommitMessage(GitCommitMessageHelperSettings settings, String authorName, String cardNumber, TypeAlias typeAlias, String shortDescription, String longDescription) {
@@ -39,10 +38,8 @@ public class CommitMessage {
         if (StringUtils.isNotBlank(cardNumber)) {
             commitTemplate.setCardNumber(cardNumber);
         }
-        if (typeAlias != null) {
-            if (StringUtils.isNotBlank(typeAlias.getTitle())) {
-                commitTemplate.setType(typeAlias.getTitle());
-            }
+        if (StringUtils.isNotBlank(typeAlias.getTitle())) {
+            commitTemplate.setType(typeAlias.getTitle());
         }
         if (StringUtils.isNotBlank(shortDescription)) {
             commitTemplate.setSubject(shortDescription);
