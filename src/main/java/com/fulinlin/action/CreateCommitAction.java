@@ -10,6 +10,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vcs.CommitMessageI;
 import com.intellij.openapi.vcs.VcsDataKeys;
 import com.intellij.openapi.vcs.ui.Refreshable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -24,7 +25,7 @@ public class CreateCommitAction extends AnAction implements DumbAware {
     }
 
     @Override
-    public void actionPerformed(AnActionEvent actionEvent) {
+    public void actionPerformed(@NotNull AnActionEvent actionEvent) {
         final CommitMessageI commitPanel = getCommitPanel(actionEvent);
         if (commitPanel == null) {
             return;
