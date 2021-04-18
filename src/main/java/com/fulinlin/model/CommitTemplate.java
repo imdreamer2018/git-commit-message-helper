@@ -8,6 +8,7 @@ package com.fulinlin.model;
 public class CommitTemplate {
 
     private String authorName;
+    private String cardNumber;
     private String type;
     private String scope;
     private String subject;
@@ -69,5 +70,13 @@ public class CommitTemplate {
 
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 }

@@ -34,6 +34,7 @@ public class VelocityUtils {
         StringWriter writer = new StringWriter();
         VelocityContext velocityContext = new VelocityContext();
         velocityContext.put("author", commitTemplate.getAuthorName());
+        velocityContext.put("card", commitTemplate.getCardNumber());
         velocityContext.put("type", commitTemplate.getType());
         velocityContext.put("scope", commitTemplate.getScope());
         velocityContext.put("subject", commitTemplate.getSubject());

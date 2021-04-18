@@ -3,16 +3,15 @@ package com.fulinlin.ui;
 import com.fulinlin.model.TypeAlias;
 import com.fulinlin.storage.GitCommitMessageHelperSettings;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VfsUtil;
 
 import javax.swing.*;
-import java.io.File;
 import java.util.List;
 
 
 public class CommitPanel {
     private JPanel mainPanel;
     private JTextField authorName;
+    private JTextField cardNumber;
     private JComboBox changeType;
     private JTextField changeScope;
     private JTextField shortDescription;
@@ -20,6 +19,7 @@ public class CommitPanel {
     private JTextField closedIssues;
     private JTextArea breakingChanges;
     private JLabel authorNameLabel;
+    private JLabel cardNumberLabel;
 
     public CommitPanel(Project project, GitCommitMessageHelperSettings settings) {
         //parameter
@@ -42,6 +42,7 @@ public class CommitPanel {
         return new CommitMessage(
                 settings,
                 authorName.getText().trim(),
+                cardNumber.getText().trim(),
                 (TypeAlias) changeType.getSelectedItem(),
                 changeScope.getText().trim(),
                 shortDescription.getText().trim(),
