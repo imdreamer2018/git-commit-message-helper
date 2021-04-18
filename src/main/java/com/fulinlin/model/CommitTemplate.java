@@ -7,6 +7,7 @@ package com.fulinlin.model;
  **/
 public class CommitTemplate {
 
+    private String authorName;
     private String type;
     private String scope;
     private String subject;
@@ -60,5 +61,13 @@ public class CommitTemplate {
 
     public void setCloses(String closes) {
         this.closes = closes;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 }

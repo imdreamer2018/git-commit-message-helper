@@ -17,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
  */
 public class CreateCommitAction extends AnAction implements DumbAware {
 
-    private GitCommitMessageHelperSettings settings;
+    private final GitCommitMessageHelperSettings settings;
 
     public CreateCommitAction() {
         this.settings = ServiceManager.getService(GitCommitMessageHelperSettings.class);

@@ -12,12 +12,14 @@ import java.util.List;
 
 public class CommitPanel {
     private JPanel mainPanel;
+    private JTextField authorName;
     private JComboBox changeType;
     private JTextField changeScope;
     private JTextField shortDescription;
     private JTextArea longDescription;
     private JTextField closedIssues;
     private JTextArea breakingChanges;
+    private JLabel authorNameLabel;
 
     public CommitPanel(Project project, GitCommitMessageHelperSettings settings) {
         //parameter
@@ -39,8 +41,9 @@ public class CommitPanel {
     CommitMessage getCommitMessage(GitCommitMessageHelperSettings settings) {
         return new CommitMessage(
                 settings,
+                authorName.getText().trim(),
                 (TypeAlias) changeType.getSelectedItem(),
-                (String) changeScope.getText().trim(),
+                changeScope.getText().trim(),
                 shortDescription.getText().trim(),
                 longDescription.getText().trim(),
                 closedIssues.getText().trim(),
@@ -48,4 +51,7 @@ public class CommitPanel {
         );
     }
 
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }

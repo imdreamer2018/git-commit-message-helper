@@ -13,9 +13,10 @@ public class CommitMessage {
     private static final int MAX_LINE_LENGTH = 72; // https://stackoverflow.com/a/2120040/5138796
     private final String content;
 
-    public CommitMessage(GitCommitMessageHelperSettings settings, TypeAlias typeAlias, String changeScope, String shortDescription, String longDescription, String closedIssues, String breakingChanges) {
+    public CommitMessage(GitCommitMessageHelperSettings settings, String authorName, TypeAlias typeAlias, String changeScope, String shortDescription, String longDescription, String closedIssues, String breakingChanges) {
         this.content = buildContent(
                 settings,
+                authorName,
                 typeAlias,
                 changeScope,
                 shortDescription,
@@ -26,6 +27,7 @@ public class CommitMessage {
     }
 
     private String buildContent(GitCommitMessageHelperSettings settings,
+                                String authorName,
                                 TypeAlias typeAlias,
                                 String changeScope,
                                 String shortDescription,
@@ -35,6 +37,9 @@ public class CommitMessage {
     ) {
 
         CommitTemplate commitTemplate = new CommitTemplate();
+        if (StringUtils.isNotBlank(authorName)) {
+            commitTemplate.setAuthorName(authorName);
+        }
         if (typeAlias != null) {
             if (StringUtils.isNotBlank(typeAlias.getTitle())) {
                 commitTemplate.setType(typeAlias.getTitle());
