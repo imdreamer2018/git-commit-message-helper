@@ -1,37 +1,38 @@
 package com.fulinlin.ui;
 
+import com.fulinlin.model.ConvertType;
 import com.fulinlin.model.TypeAlias;
 import com.fulinlin.storage.GitCommitMessageHelperSettings;
 import com.intellij.openapi.project.Project;
 
 import javax.swing.*;
-import java.util.List;
 
 
 public class CommitPanel {
     private JPanel mainPanel;
     private JTextField authorName;
     private JTextField cardNumber;
-    private JComboBox<TypeAlias> changeType;
+    private JComboBox<TypeAlias> changeTypes;
     private JTextField shortDescription;
     private JTextArea longDescription;
+    private JComboBox<ConvertType> convertTypes;
+    private JButton convertYourInput;
+    private JTextField yourShortDescription;
     private JLabel authorNameLabel;
     private JLabel cardNumberLabel;
     private JLabel longDescriptionLabel;
     private JLabel shortDescriptionLabel;
     private JLabel typeOfChangeLabel;
+    private JLabel yourShortDescriptionLabel;
+    private JLabel typeOfConvertLabel;
 
     public CommitPanel(Project project, GitCommitMessageHelperSettings settings) {
-        //parameter
-        List<TypeAlias> typeAliases = settings.getDateSettings().getTypeAliases();
-        for (TypeAlias type : typeAliases) {
-            changeType.addItem(type);
+        for (TypeAlias type : settings.getDateSettings().getTypeAliases()) {
+            changeTypes.addItem(type);
         }
-       /* fix fulin  File workingDirectory = VfsUtil.virtualToIoFile(project.getBaseDir());
-        Command.Result result = new Command(workingDirectory, "git log --all --format=%s | grep -Eo '^[a-z]+(\\(.*\\)):.*$' | sed 's/^.*(\\(.*\\)):.*$/\\1/' | sort -n | uniq").execute();
-        if (result.isSuccess()) {
-            result.getOutput().forEach(changeScope::addItem);
-        }*/
+        for (ConvertType convertType: settings.getDateSettings().getConvertTypes()) {
+            convertTypes.addItem(convertType);
+        }
     }
 
     JPanel getMainPanel() {
@@ -43,7 +44,7 @@ public class CommitPanel {
                 settings,
                 authorName.getText().trim(),
                 cardNumber.getText().trim(),
-                (TypeAlias) changeType.getSelectedItem(),
+                (TypeAlias) changeTypes.getSelectedItem(),
                 shortDescription.getText().trim(),
                 longDescription.getText().trim()
         );

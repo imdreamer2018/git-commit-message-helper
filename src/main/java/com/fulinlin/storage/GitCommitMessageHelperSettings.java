@@ -1,6 +1,7 @@
 package com.fulinlin.storage;
 
 import com.fulinlin.constant.GitCommitConstants;
+import com.fulinlin.model.ConvertType;
 import com.fulinlin.model.DataSettings;
 import com.fulinlin.model.TypeAlias;
 import com.intellij.openapi.components.PersistentStateComponent;
@@ -54,7 +55,7 @@ public class GitCommitMessageHelperSettings implements PersistentStateComponent<
         try {
             dataSettings.setTemplate(GitCommitConstants.DEFAULT_TEMPLATE);
             List<TypeAlias> typeAliases = new LinkedList<>();
-            typeAliases.add(new TypeAlias("feat", "new feature for the USER, not a new feature for build script\""));
+            typeAliases.add(new TypeAlias("feat", "new feature for the USER, not a new feature for build script"));
             typeAliases.add(new TypeAlias("fix", "bug fix for the USER, not a fix to a build script"));
             typeAliases.add(new TypeAlias("refactor", "refactoring production code e.g. renaming a variable"));
             typeAliases.add(new TypeAlias("test", "adding missing tests, refactoring tests, no production code change"));
@@ -62,6 +63,11 @@ public class GitCommitMessageHelperSettings implements PersistentStateComponent<
             typeAliases.add(new TypeAlias("style", "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"));
             typeAliases.add(new TypeAlias("chore", "updating gradle version etc., no production code change"));
             dataSettings.setTypeAliases(typeAliases);
+            List<ConvertType> convertTypes = new LinkedList<>();
+            convertTypes.add(new ConvertType("normal", "Commit message without conversion"));
+            convertTypes.add(new ConvertType("translation", "Translate the commit message from Chinese to English"));
+            convertTypes.add(new ConvertType("grammatical", "Correct the spelling and grammar of the commit message in English"));
+            dataSettings.setConvertTypes(convertTypes);
         } catch (Exception e) {
             log.error("loadDefaultSettings failed", e);
         }

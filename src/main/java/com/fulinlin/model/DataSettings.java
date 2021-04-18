@@ -15,5 +15,6 @@ import java.util.List;
 public class DataSettings {
     private String template;
     private List<TypeAlias> typeAliases;
+    private List<ConvertType> convertTypes;
 
 }
