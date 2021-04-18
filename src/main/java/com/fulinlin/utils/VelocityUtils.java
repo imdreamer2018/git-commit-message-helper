@@ -36,17 +36,12 @@ public class VelocityUtils {
         velocityContext.put("author", commitTemplate.getAuthorName());
         velocityContext.put("card", commitTemplate.getCardNumber());
         velocityContext.put("type", commitTemplate.getType());
-        velocityContext.put("scope", commitTemplate.getScope());
         velocityContext.put("subject", commitTemplate.getSubject());
         velocityContext.put("body", commitTemplate.getBody());
-        velocityContext.put("changes", commitTemplate.getChanges());
-        velocityContext.put("closes", commitTemplate.getCloses());
         velocityContext.put("newline", "\n");
         velocityContext.put("velocityTool", new VelocityTool());
-        String VM_LOG_TAG = "Leetcode VelocityUtils";
-        boolean isSuccess = engine.evaluate(velocityContext, writer, VM_LOG_TAG, template);
-        if (!isSuccess) {
-        }
+        String vmLogTag = "Leetcode VelocityUtils";
+        boolean isSuccess = engine.evaluate(velocityContext, writer, vmLogTag, template);
         return writer.toString();
     }
 }

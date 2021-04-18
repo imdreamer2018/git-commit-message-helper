@@ -13,13 +13,13 @@ public class CommitPanel {
     private JTextField authorName;
     private JTextField cardNumber;
     private JComboBox changeType;
-    private JTextField changeScope;
     private JTextField shortDescription;
     private JTextArea longDescription;
-    private JTextField closedIssues;
-    private JTextArea breakingChanges;
     private JLabel authorNameLabel;
     private JLabel cardNumberLabel;
+    private JLabel longDescriptionLabel;
+    private JLabel shortDescriptionLabel;
+    private JLabel typeOfChangeLabel;
 
     public CommitPanel(Project project, GitCommitMessageHelperSettings settings) {
         //parameter
@@ -44,11 +44,8 @@ public class CommitPanel {
                 authorName.getText().trim(),
                 cardNumber.getText().trim(),
                 (TypeAlias) changeType.getSelectedItem(),
-                changeScope.getText().trim(),
                 shortDescription.getText().trim(),
-                longDescription.getText().trim(),
-                closedIssues.getText().trim(),
-                breakingChanges.getText().trim()
+                longDescription.getText().trim()
         );
     }
 
