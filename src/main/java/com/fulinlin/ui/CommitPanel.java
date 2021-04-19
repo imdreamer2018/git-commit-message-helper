@@ -2,12 +2,16 @@ package com.fulinlin.ui;
 
 import com.fulinlin.model.ConvertType;
 import com.fulinlin.model.TypeAlias;
+import com.fulinlin.service.GoogleTranslateService;
 import com.fulinlin.storage.GitCommitMessageHelperSettings;
 import com.intellij.openapi.project.Project;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
 
-
+@Slf4j
 public class CommitPanel {
     private JPanel mainPanel;
     private JTextField authorName;
@@ -37,6 +41,22 @@ public class CommitPanel {
             ConvertType convertTypeSelectedItem = (ConvertType) convertTypes.getSelectedItem();
             if (convertTypeSelectedItem.title.equals("normal")) {
                 convertShortDescription.setDocument(shortDescription.getDocument());
+            }
+            if (convertTypeSelectedItem.title.equals("translation")) {
+                GoogleTranslateService googleTranslateService = new GoogleTranslateService();
+                Document document = shortDescription.getDocument();
+                String translatedShortDescription = null;
+                try {
+                    translatedShortDescription = googleTranslateService.translate(document.getText(0, document.getLength()));
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+                try {
+                    convertShortDescription.getDocument().remove(0, convertShortDescription.getDocument().getLength());
+                    convertShortDescription.getDocument().insertString(0, translatedShortDescription, null);
+                } catch (BadLocationException badLocationException) {
+                    badLocationException.printStackTrace();
+                }
             }
         });
     }
