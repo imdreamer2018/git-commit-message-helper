@@ -1,16 +1,24 @@
 package com.fulinlin.service;
 
+import com.fulinlin.model.OtherSetting;
+import com.fulinlin.storage.GitCommitMessageHelperSettings;
+import com.google.cloud.translate.Detection;
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
-import com.google.cloud.translate.Detection;
 import com.google.cloud.translate.Translation;
 
 public class GoogleTranslateService {
 
-    String apiKey = "your google translate app key";
     Translate translate;
 
     public GoogleTranslateService() {
+        GitCommitMessageHelperSettings settings = new GitCommitMessageHelperSettings();
+        settings.getDateSettings();
+        String apiKey = settings.getDateSettings().getOtherSettings().stream()
+                                .filter(otherSetting -> otherSetting.getKey().equals("googleTranslateApiKey"))
+                                .findFirst()
+                                .map(OtherSetting::getValue)
+                                .orElse("Please input your Google Translate Api Key in configuration");
         this.translate = TranslateOptions.newBuilder().setApiKey(apiKey).build().getService();
     }
 
