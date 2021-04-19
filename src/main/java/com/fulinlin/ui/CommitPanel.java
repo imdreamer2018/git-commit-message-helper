@@ -1,6 +1,7 @@
 package com.fulinlin.ui;
 
 import com.fulinlin.model.ConvertType;
+import com.fulinlin.model.OtherSetting;
 import com.fulinlin.model.TypeAlias;
 import com.fulinlin.service.GoogleTranslateService;
 import com.fulinlin.storage.GitCommitMessageHelperSettings;
@@ -31,6 +32,17 @@ public class CommitPanel {
     private JLabel typeOfConvertLabel;
 
     public CommitPanel(Project project, GitCommitMessageHelperSettings settings) {
+
+        try {
+            authorName.getDocument().insertString(0, settings.getDateSettings().getOtherSettings().stream()
+                                                             .filter(setting -> setting.getKey().equals("author"))
+                                                             .findFirst()
+                                                             .map(OtherSetting::getValue)
+                                                             .orElse(""), null
+            );
+        } catch (BadLocationException locationException) {
+            locationException.printStackTrace();
+        }
         for (TypeAlias type : settings.getDateSettings().getTypeAliases()) {
             changeTypes.addItem(type);
         }
