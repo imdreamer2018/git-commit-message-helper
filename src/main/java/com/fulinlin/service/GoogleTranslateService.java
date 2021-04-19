@@ -15,7 +15,7 @@ public class GoogleTranslateService {
         GitCommitMessageHelperSettings settings = new GitCommitMessageHelperSettings();
         settings.getDateSettings();
         String apiKey = settings.getDateSettings().getOtherSettings().stream()
-                                .filter(otherSetting -> otherSetting.getKey().equals("googleTranslateApiKey"))
+                                .filter(otherSetting -> otherSetting.getKey().equals("google-translate-api-key"))
                                 .findFirst()
                                 .map(OtherSetting::getValue)
                                 .orElse("Please input your Google Translate Api Key in configuration");
