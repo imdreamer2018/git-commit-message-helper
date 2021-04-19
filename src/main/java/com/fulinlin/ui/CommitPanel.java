@@ -4,6 +4,7 @@ import com.fulinlin.model.ConvertType;
 import com.fulinlin.model.OtherSetting;
 import com.fulinlin.model.TypeAlias;
 import com.fulinlin.service.GoogleTranslateService;
+import com.fulinlin.service.GrammaticalErrorCorrectionService;
 import com.fulinlin.storage.GitCommitMessageHelperSettings;
 import com.intellij.openapi.project.Project;
 import lombok.extern.slf4j.Slf4j;
@@ -76,6 +77,21 @@ public class CommitPanel {
             }
             try {
                 setConvertShortDescriptionValue(translatedShortDescription);
+            } catch (BadLocationException badLocationException) {
+                badLocationException.printStackTrace();
+            }
+        }
+        if (convertTypeSelectedItem.title.equals("grammatical")) {
+            GrammaticalErrorCorrectionService grammaticalErrorCorrectionService = new GrammaticalErrorCorrectionService();
+            Document document = shortDescription.getDocument();
+            String correctedShortDescription = null;
+            try {
+                correctedShortDescription = grammaticalErrorCorrectionService.correctSentence(document.getText(0, document.getLength())).block();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+            try {
+                setConvertShortDescriptionValue(correctedShortDescription);
             } catch (BadLocationException badLocationException) {
                 badLocationException.printStackTrace();
             }
