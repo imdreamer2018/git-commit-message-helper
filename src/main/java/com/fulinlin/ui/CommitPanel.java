@@ -59,7 +59,11 @@ public class CommitPanel {
 
     private void convertShortDescriptionScope(ConvertType convertTypeSelectedItem) {
         if (convertTypeSelectedItem.title.equals("normal")) {
-            convertShortDescription.setDocument(shortDescription.getDocument());
+            try {
+                setConvertShortDescriptionValue(shortDescription.getText().trim());
+            } catch (BadLocationException locationException) {
+                locationException.printStackTrace();
+            }
         }
         if (convertTypeSelectedItem.title.equals("translation")) {
             GoogleTranslateService googleTranslateService = new GoogleTranslateService();
@@ -71,12 +75,16 @@ public class CommitPanel {
                 exception.printStackTrace();
             }
             try {
-                convertShortDescription.getDocument().remove(0, convertShortDescription.getDocument().getLength());
-                convertShortDescription.getDocument().insertString(0, translatedShortDescription, null);
+                setConvertShortDescriptionValue(translatedShortDescription);
             } catch (BadLocationException badLocationException) {
                 badLocationException.printStackTrace();
             }
         }
+    }
+
+    private void setConvertShortDescriptionValue(String trim) throws BadLocationException {
+        convertShortDescription.getDocument().remove(0, convertShortDescription.getDocument().getLength());
+        convertShortDescription.getDocument().insertString(0, trim, null);
     }
 
     JPanel getMainPanel() {
