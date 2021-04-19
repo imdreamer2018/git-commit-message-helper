@@ -73,6 +73,8 @@ public class GitCommitMessageHelperSettings implements PersistentStateComponent<
 
             List<OtherSetting> otherSettings = new LinkedList<>();
             otherSettings.add(new OtherSetting("author", "Input your name"));
+            otherSettings.add(new OtherSetting("google-translate-api-key", "Input your google translate api key"));
+            otherSettings.add(new OtherSetting("grammatical-correct-api", "Input your grammatical error correct api url"));
             dataSettings.setOtherSettings(otherSettings);
         } catch (Exception e) {
             log.error("loadDefaultSettings failed", e);
