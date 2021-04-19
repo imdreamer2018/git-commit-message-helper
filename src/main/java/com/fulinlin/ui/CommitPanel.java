@@ -86,7 +86,7 @@ public class CommitPanel {
             Document document = shortDescription.getDocument();
             String correctedShortDescription = null;
             try {
-                correctedShortDescription = grammaticalErrorCorrectionService.correctSentence(document.getText(0, document.getLength())).block();
+                correctedShortDescription = grammaticalErrorCorrectionService.correctSentence(document.getText(0, document.getLength()));
             } catch (Exception exception) {
                 exception.printStackTrace();
             }
