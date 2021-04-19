@@ -33,6 +33,12 @@ public class CommitPanel {
         for (ConvertType convertType: settings.getDateSettings().getConvertTypes()) {
             convertTypes.addItem(convertType);
         }
+        convertYourInput.addActionListener(e -> {
+            ConvertType convertTypeSelectedItem = (ConvertType) convertTypes.getSelectedItem();
+            if (convertTypeSelectedItem.title.equals("normal")) {
+                convertShortDescription.setDocument(shortDescription.getDocument());
+            }
+        });
     }
 
     JPanel getMainPanel() {
