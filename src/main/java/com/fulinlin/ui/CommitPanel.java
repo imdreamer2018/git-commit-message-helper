@@ -13,17 +13,17 @@ public class CommitPanel {
     private JTextField authorName;
     private JTextField cardNumber;
     private JComboBox<TypeAlias> changeTypes;
-    private JTextField shortDescription;
+    private JTextField convertShortDescription;
     private JTextArea longDescription;
     private JComboBox<ConvertType> convertTypes;
     private JButton convertYourInput;
-    private JTextField yourShortDescription;
+    private JTextField shortDescription;
     private JLabel authorNameLabel;
     private JLabel cardNumberLabel;
     private JLabel longDescriptionLabel;
-    private JLabel shortDescriptionLabel;
+    private JLabel convertShortDescriptionLabel;
     private JLabel typeOfChangeLabel;
-    private JLabel yourShortDescriptionLabel;
+    private JLabel shortDescriptionLabel;
     private JLabel typeOfConvertLabel;
 
     public CommitPanel(Project project, GitCommitMessageHelperSettings settings) {
@@ -45,7 +45,7 @@ public class CommitPanel {
                 authorName.getText().trim(),
                 cardNumber.getText().trim(),
                 (TypeAlias) changeTypes.getSelectedItem(),
-                shortDescription.getText().trim(),
+                convertShortDescription.getText().trim(),
                 longDescription.getText().trim()
         );
     }
