@@ -39,26 +39,32 @@ public class CommitPanel {
         }
         convertYourInput.addActionListener(e -> {
             ConvertType convertTypeSelectedItem = (ConvertType) convertTypes.getSelectedItem();
-            if (convertTypeSelectedItem.title.equals("normal")) {
-                convertShortDescription.setDocument(shortDescription.getDocument());
-            }
-            if (convertTypeSelectedItem.title.equals("translation")) {
-                GoogleTranslateService googleTranslateService = new GoogleTranslateService();
-                Document document = shortDescription.getDocument();
-                String translatedShortDescription = null;
-                try {
-                    translatedShortDescription = googleTranslateService.translate(document.getText(0, document.getLength()));
-                } catch (Exception exception) {
-                    exception.printStackTrace();
-                }
-                try {
-                    convertShortDescription.getDocument().remove(0, convertShortDescription.getDocument().getLength());
-                    convertShortDescription.getDocument().insertString(0, translatedShortDescription, null);
-                } catch (BadLocationException badLocationException) {
-                    badLocationException.printStackTrace();
-                }
+            if (convertTypeSelectedItem != null) {
+                convertShortDescriptionScope(convertTypeSelectedItem);
             }
         });
+    }
+
+    private void convertShortDescriptionScope(ConvertType convertTypeSelectedItem) {
+        if (convertTypeSelectedItem.title.equals("normal")) {
+            convertShortDescription.setDocument(shortDescription.getDocument());
+        }
+        if (convertTypeSelectedItem.title.equals("translation")) {
+            GoogleTranslateService googleTranslateService = new GoogleTranslateService();
+            Document document = shortDescription.getDocument();
+            String translatedShortDescription = null;
+            try {
+                translatedShortDescription = googleTranslateService.translate(document.getText(0, document.getLength()));
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+            try {
+                convertShortDescription.getDocument().remove(0, convertShortDescription.getDocument().getLength());
+                convertShortDescription.getDocument().insertString(0, translatedShortDescription, null);
+            } catch (BadLocationException badLocationException) {
+                badLocationException.printStackTrace();
+            }
+        }
     }
 
     JPanel getMainPanel() {
