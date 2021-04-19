@@ -22,17 +22,17 @@ import java.util.Optional;
 
 
 public class TemplateEditPane {
-    private JPanel mainPenel;
+    private JPanel mainPanel;
     private JTabbedPane tabbedPane;
-    private JPanel templateEditPenel;
-    private JPanel typeEditPenel;
+    private JPanel templateEditPanel;
+    private JPanel typeEditPanel;
     private JPanel otherSettingPanel;
 
     //my  attribute
     protected GitCommitMessageHelperSettings settings;
-    private AliasTable aliasTable;
-    private Editor templateEditor;
-    private OtherSettingTable otherSettingTable;
+    private final AliasTable aliasTable;
+    private final Editor templateEditor;
+    private final OtherSettingTable otherSettingTable;
 
 
     public TemplateEditPane(GitCommitMessageHelperSettings settings) {
@@ -54,11 +54,11 @@ public class TemplateEditPane {
         templateEditorSettings.setVirtualSpace(false);
         JBScrollPane jbScrollPane = new JBScrollPane(templateEditor.getComponent());
         jbScrollPane.setMaximumSize(new Dimension(150, 50));
-        templateEditPenel.add(jbScrollPane);
+        templateEditPanel.add(jbScrollPane);
         ApplicationManager.getApplication().runWriteAction(() -> templateEditor.getDocument().setText(template));
 
         //init   typeEditPenel
-        typeEditPenel.add(
+        typeEditPanel.add(
                 ToolbarDecorator.createDecorator(aliasTable)
                         .setAddAction(button -> aliasTable.addAlias())
                         .setRemoveAction(button -> aliasTable.removeSelectedAliases())
@@ -134,8 +134,8 @@ public class TemplateEditPane {
     }
 
 
-    public JPanel getMainPenel() {
-        return mainPenel;
+    public JPanel getMainPanel() {
+        return mainPanel;
     }
 
 

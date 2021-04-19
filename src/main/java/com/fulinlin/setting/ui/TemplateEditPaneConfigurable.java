@@ -38,7 +38,7 @@ public class TemplateEditPaneConfigurable implements SearchableConfigurable {
         if (templateEditPane == null) {
             templateEditPane = new TemplateEditPane(settings);
         }
-        return templateEditPane.getMainPenel();
+        return templateEditPane.getMainPanel();
     }
 
 
