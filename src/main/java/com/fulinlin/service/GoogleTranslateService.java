@@ -6,14 +6,14 @@ import com.google.cloud.translate.Detection;
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
+import com.intellij.openapi.components.ServiceManager;
 
 public class GoogleTranslateService {
 
     Translate translate;
 
     public GoogleTranslateService() {
-        GitCommitMessageHelperSettings settings = new GitCommitMessageHelperSettings();
-        settings.getDateSettings();
+        GitCommitMessageHelperSettings settings = ServiceManager.getService(GitCommitMessageHelperSettings.class);
         String apiKey = settings.getDateSettings().getOtherSettings().stream()
                                 .filter(otherSetting -> otherSetting.getKey().equals("google-translate-api-key"))
                                 .findFirst()
