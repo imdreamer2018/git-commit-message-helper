@@ -1,6 +1,5 @@
 package com.fulinlin.setting.ui;
 
-import com.fulinlin.model.TypeAlias;
 import com.fulinlin.storage.GitCommitMessageHelperSettings;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -19,7 +18,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.util.List;
 import java.util.Optional;
 
 
@@ -28,17 +26,20 @@ public class TemplateEditPane {
     private JTabbedPane tabbedPane;
     private JPanel templateEditPenel;
     private JPanel typeEditPenel;
+    private JPanel otherSettingPanel;
 
     //my  attribute
     protected GitCommitMessageHelperSettings settings;
     private AliasTable aliasTable;
     private Editor templateEditor;
+    private OtherSettingTable otherSettingTable;
 
 
     public TemplateEditPane(GitCommitMessageHelperSettings settings) {
         //get setting
         this.settings = settings.clone();
         aliasTable = new AliasTable();
+        otherSettingTable = new OtherSettingTable();
         String template = Optional.of(settings.getDateSettings().getTemplate()).orElse("");
         //init  templateEditor
         templateEditor = EditorFactory.getInstance().createEditor(
@@ -77,13 +78,35 @@ public class TemplateEditPane {
                 return aliasTable.editAlias();
             }
         }.installOn(aliasTable);
-        //init
+
+        //init otherSettingPanel
+        otherSettingPanel.add(
+                ToolbarDecorator.createDecorator(otherSettingTable)
+                            .setAddAction(button -> otherSettingTable.addOtherSetting())
+                            .setRemoveAction(button -> otherSettingTable.removeSelectedOtherSettings())
+                            .setEditAction(button -> otherSettingTable.editOtherSetting())
+                            .setMoveUpAction(button -> otherSettingTable.moveUp())
+                            .setMoveDownAction(button -> otherSettingTable.moveDown())
+                            .addExtraAction
+                                    (new AnActionButton("Reset Default Other Setting", AllIcons.Actions.Rollback) {
+                                        @Override
+                                        public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
+                                            otherSettingTable.resetDefaultOtherSettings();
+                                        }
+                                    }).createPanel(), BorderLayout.CENTER);
+        new DoubleClickListener() {
+            @Override
+            protected boolean onDoubleClick(MouseEvent e) {
+                return otherSettingTable.editOtherSetting();
+            }
+        }.installOn(otherSettingTable);
     }
 
 
     public GitCommitMessageHelperSettings getSettings() {
         aliasTable.commit(settings);
         settings.getDateSettings().setTemplate(templateEditor.getDocument().getText());
+        otherSettingTable.commit(settings);
         return settings;
     }
 
@@ -91,6 +114,7 @@ public class TemplateEditPane {
         this.settings = settings.clone();
         aliasTable.reset(settings);
         ApplicationManager.getApplication().runWriteAction(() -> templateEditor.getDocument().setText(settings.getDateSettings().getTemplate()));
+        otherSettingTable.reset(settings);
     }
 
 
@@ -106,7 +130,7 @@ public class TemplateEditPane {
         if (settings.getDateSettings().getTypeAliases() == data.getDateSettings().getTypeAliases()) {
             return true;
         }
-        return false;
+        return settings.getDateSettings().getOtherSettings() == data.getDateSettings().getOtherSettings();
     }
 
 

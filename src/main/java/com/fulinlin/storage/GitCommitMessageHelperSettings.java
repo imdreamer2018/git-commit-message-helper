@@ -3,6 +3,7 @@ package com.fulinlin.storage;
 import com.fulinlin.constant.GitCommitConstants;
 import com.fulinlin.model.ConvertType;
 import com.fulinlin.model.DataSettings;
+import com.fulinlin.model.OtherSetting;
 import com.fulinlin.model.TypeAlias;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
@@ -63,11 +64,16 @@ public class GitCommitMessageHelperSettings implements PersistentStateComponent<
             typeAliases.add(new TypeAlias("style", "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"));
             typeAliases.add(new TypeAlias("chore", "updating gradle version etc., no production code change"));
             dataSettings.setTypeAliases(typeAliases);
+
             List<ConvertType> convertTypes = new LinkedList<>();
             convertTypes.add(new ConvertType("normal", "Commit message without conversion"));
             convertTypes.add(new ConvertType("translation", "Translate the commit message from Chinese to English"));
             convertTypes.add(new ConvertType("grammatical", "Correct the spelling and grammar of the commit message in English"));
             dataSettings.setConvertTypes(convertTypes);
+
+            List<OtherSetting> otherSettings = new LinkedList<>();
+            otherSettings.add(new OtherSetting("author", "Input your name"));
+            dataSettings.setOtherSettings(otherSettings);
         } catch (Exception e) {
             log.error("loadDefaultSettings failed", e);
         }
