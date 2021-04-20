@@ -18,14 +18,14 @@ public class GrammaticalErrorCorrectionService {
     HttpURLConnection con;
 
     public GrammaticalErrorCorrectionService() {
-//        GitCommitMessageHelperSettings settings = ServiceManager.getService(GitCommitMessageHelperSettings.class);
-//        String api = settings.getDateSettings().getOtherSettings().stream()
-//                .filter(otherSetting -> otherSetting.getKey().equals("grammatical-correct-api"))
-//                .findFirst()
-//                .map(OtherSetting::getValue)
-//                .orElse("Please input your Grammatical correct api in configuration");
+        GitCommitMessageHelperSettings settings = ServiceManager.getService(GitCommitMessageHelperSettings.class);
+        String api = settings.getDateSettings().getOtherSettings().stream()
+                .filter(otherSetting -> otherSetting.getKey().equals("grammatical-correct-api"))
+                .findFirst()
+                .map(OtherSetting::getValue)
+                .orElse("Please input your Grammatical correct api in configuration");
         try {
-            URL url = new URL ("http://127.0.0.1:21046/api/texts");
+            URL url = new URL (api);
             con = (HttpURLConnection)url.openConnection();
         } catch (IOException e) {
             e.printStackTrace();
