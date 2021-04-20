@@ -28,12 +28,14 @@ dependencies {
 intellij {
 //    version 'IU-2017.1'
     version 'IU-2020.1'
-    pluginName 'Git Commit Message Helper'
+    pluginName 'TW Git Commit Message Helper'
     updateSinceUntilBuild false
 }
 patchPluginXml {
     changeNotes """
          <ul>
+              <li>Translation convert type</li>
+              <li>Grammatical error correction type</li>
               <li>personalized submission type<br></li>
               <li>personalized submission template</li>
          </ul>
