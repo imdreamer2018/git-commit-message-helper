@@ -1,28 +1,60 @@
-# git-commit-message-helper
-This plugin is an upgraded version of the source idea plugin [git-commit-template](https://plugins.jetbrains.com/plugin/9861-git-commit-template) , adding a series of personalized configurations. 
+# tw-git-commit-message-helper
+This plugin is an upgraded version of the source idea plugin [git-commit-message-helper](https://plugins.jetbrains.com/plugin/13477-git-commit-message-helper/) , added some specific functions which is used to help ThoughtWorks employees submit git commit messages in a standardized way.
 
 
-## Installation
-Install directly from the IDE plugin manager (File > Settings > Plugins > Browser repositories > Git Commit Message Helper
+## Install
+Install directly from the IDE plugin manager (File > Settings > Plugins > Browser repositories > TW Git Commit Message Helper
 )
 
 ## Usage
-![](https://raw.githubusercontent.com/AutismSuperman/git-commit-message-helper/master/image/operation.gif)
 
-If you want to change the type of submission, you can change it in settings
+### Normal-Commit message without conversion
 
-![](https://raw.githubusercontent.com/AutismSuperman/git-commit-message-helper/master/image/settings-2.png)
+#### Setting your name
 
-If you want to personalize your submission template can be set in the settings, the template engine here uses velocity
+![image-20210420165832620](/Users/yangqian/Library/Application Support/typora-user-images/image-20210420165832620.png)
 
-![](https://raw.githubusercontent.com/AutismSuperman/git-commit-message-helper/master/image/settings-1.png)
+#### How to use normal commit
+
+![normal](/Users/yangqian/Downloads/normal.gif)
+
+### Translation- Translate the commit message from Chinese to English
+
+#### Setting your google-translate-api-key
+
+Please refer to this [link](https://cloud.google.com/translate/docs/setup) to get your google translate api key
+
+#### How to use translation commit
+
+![translation](/Users/yangqian/Downloads/translation.gif)
+
+### Grammatical-Correct the spelling and grammar of the commit message in English
+
+#### Setting your grammatical-correct-api
+
+Please refer to this [link](https://github.com/imdreamer2018/Grammatical-Error-Correction) , install your grammatical error correction service, You can build your docker images or pull my docker images. However, the service does not support the correction of Chinese English for the time being, and the model will continue to be trained to support correction in the future.
+
+grammatical-correct-api default value is `http://127.0.0.1:21046/api/texts`
+
+#### How to use grammatical commit
+
+![grammatical](/Users/yangqian/Downloads/grammatical.gif)
+
+### Change the type of commit
+
+![image-20210420180541136](/Users/yangqian/Library/Application Support/typora-user-images/image-20210420180541136.png)
+
+### personalize your commit template
+
+![image-20210420180616951](/Users/yangqian/Library/Application Support/typora-user-images/image-20210420180616951.png)
 
 # License
+
 Licensed under the  [Apache License](http://www.apache.org/licenses/LICENSE-2.0), Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-
+#### thank you for   https://github.com/AutismSuperman/git-commit-message-helper
 #### thank you for   https://github.com/MobileTribe/commit-template-idea-plugin
 #### thank you for   https://github.com/MobileTribe/commit-template-idea-plugin
 #### thank you for   https://github.com/x-hansong/CodeMaker
