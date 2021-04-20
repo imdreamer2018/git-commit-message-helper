@@ -24,7 +24,7 @@ public class GitCommitMessageHelper implements ApplicationComponent {
     @Override
     @NotNull
     public String getComponentName() {
-        return "GitCommitMessageHelper";
+        return "TWGitCommitMessageHelper";
     }
 
 }

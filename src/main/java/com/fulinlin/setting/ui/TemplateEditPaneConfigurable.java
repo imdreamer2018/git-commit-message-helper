@@ -28,7 +28,7 @@ public class TemplateEditPaneConfigurable implements SearchableConfigurable {
     @NotNull
     @Override
     public String getId() {
-        return "plugins.gitcommitmessagehelper";
+        return "plugins.twgitcommitmessagehelper";
     }
 
 
@@ -45,13 +45,13 @@ public class TemplateEditPaneConfigurable implements SearchableConfigurable {
     @Nullable
     @Override
     public String getHelpTopic() {
-        return "help.gitcommitmessagehelper.configuration";
+        return "help.twgitcommitmessagehelper.configuration";
     }
 
     @Nls(capitalization = Nls.Capitalization.Title)
     @Override
     public String getDisplayName() {
-        return "GitCommitMessageHelper";
+        return "TWGitCommitMessageHelper";
     }
 
 
