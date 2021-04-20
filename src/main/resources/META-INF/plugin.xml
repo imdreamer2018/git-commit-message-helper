@@ -23,12 +23,14 @@
                 <h2>Normal-Commit message without conversion</h2>
                 <h3>Setting your name</h3>
                 <p>
-                https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-1.png
+                <img src="https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-1.png"
+                        alt="setting-your-name">
                 </p>
                 <br>
                 <h3>How to use normal commit</h3>
                 <p>
-                https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/normal.gif
+                <img src="https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/normal.gif"
+                        alt="normal">
                 </p>
             </div>
             <br>
@@ -41,7 +43,8 @@
                 <br>
                 <h3>How to use translation commit</h3>
                 <p>
-                https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/translation.gif
+                <img src="https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/translation.gif"
+                        alt="translation">
                 </p>
             </div>
             <div>
@@ -55,7 +58,9 @@
                 <br>
                 <h3>How to use grammatical commit</h3>
                 <p>
-                https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/grammatical.gif
+                <img src="https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/grammatical.gif"
+                        alt="grammatical">
+                </p>
                 </p>
             </div>
 
