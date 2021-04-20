@@ -11,7 +11,6 @@ Install directly from the IDE plugin manager (File > Settings > Plugins > Browse
 ### Normal-Commit message without conversion
 
 #### Setting your name
-https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/normal.gif
 ![setting-your-name](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-1.png)
 
 #### How to use normal commit
