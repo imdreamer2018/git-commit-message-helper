@@ -11,12 +11,12 @@ Install directly from the IDE plugin manager (File > Settings > Plugins > Browse
 ### Normal-Commit message without conversion
 
 #### Setting your name
-
-![image-20210420165832620](/Users/yangqian/Library/Application Support/typora-user-images/image-20210420165832620.png)
+https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/normal.gif
+![setting-your-name](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-1.png)
 
 #### How to use normal commit
 
-![normal](/Users/yangqian/Downloads/normal.gif)
+![normal](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/normal.gif)
 
 ### Translation- Translate the commit message from Chinese to English
 
@@ -26,7 +26,7 @@ Please refer to this [link](https://cloud.google.com/translate/docs/setup) to ge
 
 #### How to use translation commit
 
-![translation](/Users/yangqian/Downloads/translation.gif)
+![translation](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/translation.gif)
 
 ### Grammatical-Correct the spelling and grammar of the commit message in English
 
@@ -38,15 +38,15 @@ grammatical-correct-api default value is `http://127.0.0.1:21046/api/texts`
 
 #### How to use grammatical commit
 
-![grammatical](/Users/yangqian/Downloads/grammatical.gif)
+![grammatical](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/grammatical.gif)
 
 ### Change the type of commit
 
-![image-20210420180541136](/Users/yangqian/Library/Application Support/typora-user-images/image-20210420180541136.png)
+![Change-the-type-of-commit](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-2.png)
 
 ### personalize your commit template
 
-![image-20210420180616951](/Users/yangqian/Library/Application Support/typora-user-images/image-20210420180616951.png)
+![personalize-your-commit-template](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-3.png)
 
 # License
 
