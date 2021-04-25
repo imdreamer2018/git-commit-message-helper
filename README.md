@@ -3,7 +3,7 @@ This plugin is an upgraded version of the source idea plugin [git-commit-message
 
 
 ## Install
-Install directly from the IDE plugin manager (File > Settings > Plugins > Browser repositories > TW Git Commit Message Helper
+Install directly from the IDE plugin manager (File > Settings > Plugins > Browser repositories > ThoughtWorks Git Commit Message Helper
 )
 
 ## Usage
