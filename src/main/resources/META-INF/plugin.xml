@@ -2,16 +2,14 @@
     <id>TW-commit-message-helper-idea-plugin</id>
     <name>ThoughtWorks Git Commit Message Helper</name>
     <vendor email="qian.yang2@thoughtworks.com" url="https://github.com/imdreamer2018">YangQian</vendor>
-    <version>1.0.0</version>
+    <version>1.1.1</version>
     <description>
         <![CDATA[
              <div>
-                <h2>Introduction</h2>
-                <br>
                 <ul>
                     <li>A plugin that helps you standardize submissions</li>
                     <li>This plug-in is a secondary development version derived from git-commit-message-helper,
-                    which is used to help ThoughtWorks employees submit git commit messages in a standardized way.
+                        which is used to help ThoughtWorks employees submit git commit messages in a standardized way.
                     </li>
                 </ul>
                 <ul>
@@ -20,50 +18,45 @@
                 </ul>
             </div>
             <div>
-                <h2>Normal-Commit message without conversion</h2>
-                <h3>Setting your name</h3>
+                <h3>Normal-Commit message without conversion</h3>
+                <h4>Setting your name</h4>
                 <p>
-                <img src="https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-1.png"
-                        alt="setting-your-name">
+                    <img src="https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/setting-1.png"
+                         alt="setting-your-name" height="500px">
                 </p>
-                <br>
-                <h3>How to use normal commit</h3>
+                <h4>How to use normal commit</h4>
                 <p>
-                <img src="https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/normal.gif"
-                        alt="normal">
-                </p>
-            </div>
-            <br>
-            <div>
-                <h2>Translation- Translate the commit message from Chinese to English</h2>
-                <h3>Setting your google-translate-api-key</h3>
-                <p>
-                Please refer to this https://cloud.google.com/translate/docs/setup to get your google translate api key
-                </p>
-                <br>
-                <h3>How to use translation commit</h3>
-                <p>
-                <img src="https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/translation.gif"
-                        alt="translation">
+                    <img src="https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/normal.gif"
+                         alt="normal" height="500px">
                 </p>
             </div>
             <div>
-                <h2>Grammatical-Correct the spelling and grammar of the commit message in English</h2>
-                <h3>Setting your grammatical-correct-api</h3>
+                <h3>Translation- Translate the commit message from Chinese to English</h3>
+                <h4>Setting your google-translate-api-key</h4>
                 <p>
-                Please refer to this https://github.com/imdreamer2018/Grammatical-Error-Correction, install your grammatical error correction service,
-                You can build your docker images or pull my docker images.
-                However, the service does not support the correction of Chinese English for the time being, and the model will continue to be trained to support correction in the future.
+                    Please refer to this https://cloud.google.com/translate/docs/setup to get your google translate api key
                 </p>
-                <br>
-                <h3>How to use grammatical commit</h3>
+                <h4>How to use translation commit</h4>
                 <p>
-                <img src="https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/grammatical.gif"
-                        alt="grammatical">
-                </p>
+                    <img src="https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/translation.gif"
+                         alt="translation" height="500px">
                 </p>
             </div>
-
+            <div>
+                <h3>Grammatical-Correct the spelling and grammar of the commit message in English</h3>
+                    <h4>Setting your grammatical-correct-api</h4>
+                    <p>
+                        Please refer to this https://github.com/imdreamer2018/Grammatical-Error-Correction, install your grammatical error correction service,
+                        You can build your docker images or pull my docker images.
+                        However, the service does not support the correction of Chinese English for the time being, and the model will continue to be trained to support correction in the future.
+                    </p>
+                    <h4>How to use grammatical commit</h4>
+                    <p>
+                        <img src="https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/grammatical.gif"
+                             alt="grammatical" height="500px">
+                    </p>
+                    </p>
+            </div>
         ]]>
     </description>
 

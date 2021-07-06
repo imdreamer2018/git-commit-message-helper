@@ -11,11 +11,11 @@ Install directly from the IDE plugin manager (File > Settings > Plugins > Browse
 ### Normal-Commit message without conversion
 
 #### Setting your name
-![setting-your-name](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-1.png)
+![setting-your-name](https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/setting-1.png)
 
 #### How to use normal commit
 
-![normal](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/normal.gif)
+![normal](https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/normal.gif)
 
 ### Translation- Translate the commit message from Chinese to English
 
@@ -25,7 +25,7 @@ Please refer to this [link](https://cloud.google.com/translate/docs/setup) to ge
 
 #### How to use translation commit
 
-![translation](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/translation.gif)
+![translation](https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/translation.gif)
 
 ### Grammatical-Correct the spelling and grammar of the commit message in English
 
@@ -37,15 +37,15 @@ grammatical-correct-api default value is `http://127.0.0.1:21046/api/texts`
 
 #### How to use grammatical commit
 
-![grammatical](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/grammatical.gif)
+![grammatical](https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/grammatical.gif)
 
 ### Change the type of commit
 
-![Change-the-type-of-commit](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-2.png)
+![Change-the-type-of-commit](https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/setting-2.png)
 
 ### personalize your commit template
 
-![personalize-your-commit-template](https://raw.githubusercontent.com/imdreamer2018/git-commit-message-helper/master/image/setting-3.png)
+![personalize-your-commit-template](https://imdreamer.oss-cn-hangzhou.aliyuncs.com/git-commit-message-helper/setting-3.png)
 
 # License
 
